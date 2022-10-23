@@ -19,6 +19,7 @@ while True:
 
     
     aposta = int(input("Creditos a apostar:  "))
+    
     if aposta > creditos_atuais:
         print("Não tens creditos suficientes")
         continue
@@ -31,12 +32,15 @@ while True:
         creditos = creditos_atuais
         if creditos <= 0:
             break
+            
         resposta = input("Continuar a jogar?")
         if resposta == "s" or resposta == "sim" or resposta == "S" or resposta == "Sim":
             continue
+            
         else:
             break
 
+            
     else:
         simbolo =  simb1
         if simbolo == [1]:
@@ -54,11 +58,15 @@ while True:
         if simbolo == [7]:
             ganhos = aposta * 100000
 
+            
         creditos = creditos_atuais + ganhos
+        
         print("Ganhaste {} e ficas com {} creditos disponiveis".format(ganhos,creditos))
         resposta = input("Continuar a jogar?")
+        
         if resposta == "s" or resposta == "sim" or resposta == "S" or resposta == "Sim":
             continue
+        
         else:
             break
     
