@@ -17,12 +17,13 @@ while True:
     simb2 = (simbolo2.rand)    
     simb3 = (simbolo3.rand)  
 
-    creditos_atuais = creditos
+    
     aposta = int(input("Creditos a apostar:  "))
     if aposta > creditos_atuais:
         print("Não tens creditos suficientes")
         continue
-    creditos_atuais = creditos_atuais - aposta
+    
+    creditos_atuais = creditos - aposta
     
     print(simb1, simb2, simb3)
     if not simb1 == simb2 == simb3:
