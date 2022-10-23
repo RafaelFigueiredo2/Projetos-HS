@@ -1,6 +1,6 @@
 import random
 
-class Agora:
+class GerarSimbolo:
     def __init__(self, simb):
         self.simb = simb
         self.roll()
@@ -8,12 +8,11 @@ class Agora:
         simbolos = [1, 2, 3, 4, 5, 6, 7]
         self.rand = (random.choices(simbolos, weights=(50/156, 40/156, 30/156, 20/156, 10/156, 5/156, 1/156)))
   
-x0 = 1
 creditos = int(input("Creditos a depositar:  "))
-while x0 == 1:
-    simbolo1 = Agora(1)
-    simbolo2 = Agora(1)
-    simbolo3 = Agora(1)
+while True:
+    simbolo1 = GerarSimbolo(1)
+    simbolo2 = GerarSimbolo(1)
+    simbolo3 = GerarSimbolo(1)
     simb1 = (simbolo1.rand)    
     simb2 = (simbolo2.rand)    
     simb3 = (simbolo3.rand)  
@@ -33,34 +32,33 @@ while x0 == 1:
             break
         resposta = input("Continuar a jogar?")
         if resposta == "s" or resposta == "sim" or resposta == "S" or resposta == "Sim":
-            x0 = 1
+            continue
         else:
-            x0 = 0
+            break
 
     else:
-        d =  simb1
-        y = aposta
-        if d == [1]:
-            w = y * 5
-        if d == [2]:
-            w = y * 10
-        if d == [3]:
-            w = y * 20
-        if d == [4]:
-            w = y * 70
-        if d == [5]:
-            w = y * 200
-        if d == [6]:
-            w = y * 1000
-        if d == [7]:
-            w = y * 100000
+        simbolo =  simb1
+        if simbolo == [1]:
+            ganhos = aposta * 5
+        if simbolo == [2]:
+            ganhos = aposta * 10
+        if simbolo == [3]:
+            ganhos = aposta * 20
+        if simbolo == [4]:
+            ganhos = aposta * 70
+        if simbolo == [5]:
+            ganhos = aposta * 200
+        if simbolo == [6]:
+            ganhos = aposta * 1000
+        if simbolo == [7]:
+            ganhos = aposta * 100000
 
-        creditos = creditos_atuais + w
-        print("Ganhaste {} e ficas com {} creditos disponiveis".format(y,creditos))
+        creditos = creditos_atuais + ganhos
+        print("Ganhaste {} e ficas com {} creditos disponiveis".format(ganhos,creditos))
         resposta = input("Continuar a jogar?")
         if resposta == "s" or resposta == "sim" or resposta == "S" or resposta == "Sim":
-            x0 =1
+            continue
         else:
-            x0 = 0
+            break
     
         
