@@ -20,7 +20,7 @@ while True:
     
     aposta = int(input("Creditos a apostar:  "))
     
-    if aposta > creditos_atuais:
+    if aposta > creditos:
         print("Não tens creditos suficientes")
         continue
     
